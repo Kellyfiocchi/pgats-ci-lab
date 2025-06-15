@@ -7,7 +7,7 @@ name: 'Execução Programada de Testes E2E'
 on:
   schedule:
     # cronograma de execução
-    - cron: '0 6 * * 1' # executa toda segunda-feira às 06:00 hs
+    - cron: '0 6 * * 1' # executa toda segunda-feira às 06:00 UTC
 
 # trabalhos/tarefas dentro do pipeline
 jobs:
