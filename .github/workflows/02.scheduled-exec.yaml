@@ -1,7 +1,7 @@
 # CI de Nível 02 - Disparo Programado
 
 # nome do nosso 'pipeline'
-name: 'Execução Programada de Testes E2E'
+name: 'Execução Agendada testes E2E'
 
 # gatilho de execução manual
 on:
