@@ -3,11 +3,7 @@
 # nome do nosso 'pipeline'
 name: 'Execução por Deploy'
 
-#regras de disparo (gatilhos/triggers) do pipeline
-# gatilho de execução manual
-# gatilho de execução agendada = scheduled
-# gatilho de execução a partir  de outro pipe = workflow_run
-
+# regras de disparo (gatilhos/triggers) do pipeline
 on:
   workflow_run:
     workflows: ['Execução Manual']
@@ -49,8 +45,10 @@ jobs:
       - name: Executando testes E2E
         run: yarn run e2e
 
-      - uses: actions/upload-artifact@v4
-      if: ${{ canceled() }}
+      # upload do relatório - sempre executa, mesmo com falhas
+      - name: Upload do relatório
+        if: always()
+        uses: actions/upload-artifact@v4
         with:
           name: relatorio
-          path: ./playwright-report  
+          path: ./playwright-report
