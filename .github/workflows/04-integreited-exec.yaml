@@ -18,8 +18,8 @@ jobs:
       - name: Instalando dependências
         run: yarn
 
-      - name: Corrigindo padronizacao do código com Prettier
-        run: prettier --write --ignore-path .gitignore .
+      - name: Checando padronizacao do código
+        run: yarn lint
 
   unidade:
     runs-on: ubuntu-latest
